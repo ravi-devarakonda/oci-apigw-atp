@@ -21,7 +21,7 @@ connect to the instance to verify you can login successfully
 
 ## Configure the VM for http endpoint
 1. make sure the virtual machine has latest python version installed using the command:
-<br>`python3 version`
+<br>`python3 --version`
 1. install flask using pip:
 <br> `sudo pip3 install flask`
 1. clone this git repo using the command:
