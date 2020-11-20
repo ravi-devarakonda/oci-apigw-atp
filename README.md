@@ -98,7 +98,8 @@ ATP configuration is complete now.
 2. Click on the gateway that's created
 3. In the Gateway screen, click on Deployments link under Resources and click on the deployment that was created
 <br>![deployments](./screenshots/deployments.JPG)
-4. In the deployment details screen click on the Edit button
+4. In the deployment details screen, copy and make a note of the apigw endpoint (visible to the right of the deploment) 
+5. Now, click on the Edit button at the top of the screen
 5. Click next on the Edit Deployment screen
 6. Scroll down to the bottom of the page and click **+Another Route** button
 7. In the PATH text box, enter `/getemp`
@@ -107,7 +108,7 @@ ATP configuration is complete now.
 10. In the URL text box, enter `http://publi.ip.of.vm:5000/getemp`
 <br> ![addroute](./screenshots/route.JPG)
 11. Click Next and Click Save Changes.
-12. Now, you should be able to browse to the apigatewayenpoint url route. for example [https://apigw-url.com/getemp](https://apigw-url.com/getemp)
+12. Now, you should be able to browse to the new route using the endpoint url. for example [https://apigwendpoint-url.com/getemp](https://apigwendpoint-url.com/getemp)
 
 
 
