@@ -14,7 +14,7 @@ We'll create an "always free" VM with Oracle Linux 7.x installed in it.
 7. Click create. It will take a couple of minutes for the instance to get provisioned.
 8. Copy the public-ip address of the instance. 
 <br>![provisioned instance](./screenshots/runninginstance.jpg)
-connect to the instance to verify you can login successfully
+9. connect to the instance to verify you can login successfully
    * Connect from a Linux/Mac Machine using the default cli tool like terminal using ssh command.
    <br>`ssh -i /path/to/private/key/file opc@public-ip`
    * Connect from Windows using a tool like putty.
