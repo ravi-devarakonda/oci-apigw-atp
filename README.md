@@ -24,6 +24,7 @@ connect to the instance to verify you can login successfully
 <br>`python3 --version`
 1. install flask using pip:
 <br> `sudo pip3 install flask`
+1. If Git is not installed, install it using:<br> ` sudo yum install -y git`
 1. clone this git repo using the command:
 <br>`git clone https://github.com/ravi041282/oci-apigw-atp.git`
 1. `cd` to the directory `oci-apigw-atp`
