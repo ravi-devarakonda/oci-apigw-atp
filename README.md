@@ -52,8 +52,9 @@ connect to the instance to verify you can login successfully
 We have successfully configured the http endpoint.
 
 ## Configure the VM to connect to ATP
-We will need to configure the VM to be able to connect to the ATP database. For this we will need Oracle SQL Client to be installed in the VM and we will need to upload the ATP Wallet to the VM.
+We will need to configure the VM to be able to connect to the ATP database. For this we will need Oracle SQL Client to be installed in the VM and we will need to upload the ATP Wallet to the VM. Press `Ctrl+c` from the Keyboard, if flask is still running in the foreground.
 ### Install sql client
+run the following commands to install sql client:
 ```
 sudo yum -y install oracle-release-el7
 sudo yum -y install oracle-instantclient19.3-basic
@@ -80,7 +81,6 @@ i.e., to `(DIRECTORY="/opt/oracle/instantclient_19_9/network/admin")`. Save the 
 
 ### Edit `atpconnect.sh`
 Once sql client and wallet configuration is complete, we'll need to edit the `atpconnect.sh` script to edit select statement to reflect your ATP Table.
-1. Press `Ctrl+c` from the Keyboard, if flask is still running in the foreground. 
 1. open `atpconnect.sh` using an editor like vim.
 1. replace username and password from the line:<br>
 ```l_output=`sqlplus -s <username>/<password>@blkatp_low<<EOF```
