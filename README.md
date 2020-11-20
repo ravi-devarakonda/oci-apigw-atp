@@ -39,15 +39,15 @@ connect to the instance to verify you can login successfully
 ## Configure OCI Security list to allow traffic on port 5000
 1. Flask applications run by default on port 5000. we'll need to open this port on the security list(firewall)
 1. Back in the OCI Console navigate to Hamburger Menu > Networking > Virtual Cloud Networks
-<br>![hamburger menu](https://github.com/ravi041282/oci-apigw-atp/blob/main/screenshots/hamburger.jpg)
+<br>![hamburger menu](https://github.com/ravi041282/oci-apigw-atp/blob/main/screenshots/hamburger.JPG)
 1. click on the VCN you have created and in the VCN page, click on Security Lists link under Resources
-<br>![security lists](https://github.com/ravi041282/oci-apigw-atp/blob/main/screenshots/securitylists.jpg)
+<br>![security lists](https://github.com/ravi041282/oci-apigw-atp/blob/main/screenshots/securitylists.JPG)
 1. Click on the security list wihich starts with name **Default Security List**
 1. Under Ingress Rules, click Add Ingress Rules button.
 1. In the Add Ingress rules Window, enter `0.0.0.0/0` in the SOURCE CIDR box and enter `5000` in the DESTINATION PORT RANGE box and click Add Ingress Rules button to the bottom left.
-<br>![add ingress](https://github.com/ravi041282/oci-apigw-atp/blob/main/screenshots/addingress.jpg)
+<br>![add ingress](https://github.com/ravi041282/oci-apigw-atp/blob/main/screenshots/addingress.JPG)
 1. open a new browser window and navigate to [http://public-ip.of.the.vm:5000](http://)
-<br>![server works!](https://github.com/ravi041282/oci-apigw-atp/blob/main/screenshots/serverworks.jpg)
+<br>![server works!](https://github.com/ravi041282/oci-apigw-atp/blob/main/screenshots/serverworks.JPG)
 
 We have successfully configured the http endpoint.
 
