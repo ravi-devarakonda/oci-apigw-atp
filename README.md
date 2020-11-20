@@ -34,7 +34,7 @@ connect to the instance to verify you can login successfully
    1. `app.py` - has the code to publish various routes and one of them routes us to the atp connect script
    1. `atpconnect.sh` - the `app.py` script has a route to this script and this script connects to ATP to retrieve user details.
 1. For now, we will leave the scripts as-is & test the flask connection.
-1. Make sure you are in the directory `oci-apigw-atp` and run: <br>`flask run`
+1. Make sure you are in the directory `oci-apigw-atp` and run: <br>`flask run --host=0.0.0.0`
 
 ## Configure OCI Security list to allow traffic on port 5000
 1. Flask applications run by default on port 5000. we'll need to open this port on the security list(firewall)
@@ -80,6 +80,7 @@ i.e., to `(DIRECTORY="/opt/oracle/instantclient_19_9/network/admin")`. Save the 
 
 ### Edit `atpconnect.sh`
 Once sql client and wallet configuration is complete, we'll need to edit the `atpconnect.sh` script to edit select statement to reflect your ATP Table.
+1. Press `Ctrl+c` from the Keyboard, if flask is still running in the foreground. 
 1. open `atpconnect.sh` using an editor like vim.
 1. replace username and password from the line:<br>
 ```l_output=`sqlplus -s <username>/<password>@blkatp_low<<EOF```
@@ -88,8 +89,27 @@ Once sql client and wallet configuration is complete, we'll need to edit the `at
 sql_stmt := 'select * from employees where empname=''sid''';
 ```
 4. run the script manually to verify it is working by running:<br> `sh atpconnect.sh`
+5. Once script is verified, run flask as a background process by running:
+<br> `flask run --host=0.0.0.0 >> flask-log.txt 2>&1 &`
 
-ATP configuration is complete now.
+ATP configuration is complete now. 
+## Adding http endpoint to API Gateway
+1. Back in OCI Console, navigate to hamburger menu > Developer Services > API Gateway
+2. Click on the gateway that's created
+3. In the Gateway screen, click on Deployments link under Resources and click on the deployment that was created
+<br>![deployments](./screenshots/deployments.JPG)
+4. In the deployment details screen click on the Edit button
+5. Click next on the Edit Deployment screen
+6. Scroll down to the bottom of the page and click **+Another Route** button
+7. In the PATH text box, enter `/getemp`
+8. In the Methods box, click and choose GET
+9. In the Type box, choose backend as HTTP
+10. In the URL text box, enter `http://publi.ip.of.vm:5000/getemp`
+<br> ![addroute](./screenshots/route.JPG)
+11. Click Next and Click Save Changes.
+12. Now, you should be able to browse to the apigatewayenpoint url route. for example [https://apigw-url.com/getemp](https://apigw-url.com/getemp)
+
+
 
 
 
