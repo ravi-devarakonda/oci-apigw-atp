@@ -80,7 +80,7 @@ sudo yum -y install oracle-instantclient19.3-basic
 i.e., to `(DIRECTORY="/opt/oracle/instantclient_19_9/network/admin")`. Save the file and exit out of the editor.
 
 ### Edit `atpconnect.sh`
-Once sql client and wallet configuration is complete, we'll need to edit the `atpconnect.sh` script to edit select statement to reflect your ATP Table.
+Once sql client and wallet configuration is complete, we'll need to edit the `atpconnect.sh` script to edit select statement to reflect your ATP Table. Navigate back to `oci-apigw-atp` directory.
 1. open `atpconnect.sh` using an editor like vim.
 1. replace username and password from the line:<br>
 ```l_output=`sqlplus -s <username>/<password>@blkatp_low<<EOF```
