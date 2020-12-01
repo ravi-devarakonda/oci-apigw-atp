@@ -110,6 +110,10 @@ ATP configuration is complete now.
 <br> ![addroute](./screenshots/route.JPG)
 11. Click Next and Click Save Changes.
 12. Now, you should be able to browse to the new route using the endpoint url. for example [https://apigwendpoint-url.com/getemp](https://apigwendpoint-url.com/getemp)
+<br><br>
+>**Disclaimer**: This is a personal repository. All code, views or opinions represented here are personal and belong solely to me and do not represent those of people, institutions or organizations that I may or may not be associated with in professional or personal capacity, unless explicitly stated.<br>
+<br>*Also **please note**, resources deployed using these example scripts do incur charges. Make sure to terminate the deployed resources/services after your tests, to save/minimize your bills*
+
 
 
 
